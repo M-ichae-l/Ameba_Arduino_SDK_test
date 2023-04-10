@@ -12,7 +12,7 @@ toolchain_version=1.0.1
 toolchain_version_p1={toolchain_version}-p1
 toolchain_version_p2={toolchain_version}-p2
 toolchain_name=ameba_pro2_toolchain-{toolchain_version_p1}
-toolchain_name2==ameba_pro2_toolchain-{toolchain_version_p2}
+toolchain_name2=ameba_pro2_toolchain2-{toolchain_version_p2}
 
 # Ameba paths
 # ----------------------
@@ -29,7 +29,7 @@ ameba.nn_path={build.system.path}/project/realtek_amebapro2_v0_example/src/VIPLi
 ## compiler/toolchain path
 compiler.path={runtime.tools.{toolchain_name}.path}/bin/
 toolchain.path={runtime.tools.{toolchain_name}.path}
-toolchain2.path={runtime.tools.{toolchain_name}.path}
+toolchain2.path={runtime.tools.{toolchain_name2}.path}
 
 ## tools path 
 ameba.tools_path={runtime.tools.ameba_pro2_tools.path}
