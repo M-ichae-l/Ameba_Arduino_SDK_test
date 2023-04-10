@@ -36,29 +36,45 @@ def copy_files_recursive(src_dir, dest_dir):
         print(f"Error copying files: {e}")
 
 
-def main(toolchian_path, toolchain_p1, toolchain_p2):
+def main(toolchian_path, toolchian_path2, toolchain_p1, toolchain_p2):
 # toolchain process
+#    os.chdir(toolchian_path)
+#    os.chdir("..")
+
+#    if os.path.exists(toolchain_p2):
+#        current_dir = os.getcwd()
+#        # get the full path of the source folder
+#        src_folder = os.path.join(current_dir, toolchain_p2)
+#        dst_folder = os.path.join(current_dir, toolchain_p1)
+#        copy_files_recursive(src_folder, dst_folder)
+#        try:
+#            shutil.rmtree(src_folder)
+#        except Exception as e:
+#           print(f"Error: {toolchain_p2} : {e}")
+
+
     os.chdir(toolchian_path)
     os.chdir("..")
 
+    current_dir = os.getcwd()
+    dst_folder = os.path.join(current_dir, toolchain_p1)
+
+    os.chdir(toolchian_path2)
+    os.chdir("..")
     if os.path.exists(toolchain_p2):
         current_dir = os.getcwd()
         # get the full path of the source folder
         src_folder = os.path.join(current_dir, toolchain_p2)
-        dst_folder = os.path.join(current_dir, toolchain_p1)
         copy_files_recursive(src_folder, dst_folder)
         try:
             shutil.rmtree(src_folder)
         except Exception as e:
             print(f"Error: {toolchain_p2} : {e}")
 
-    if not os.path.exists(toolchain_p2):
-        os.mkdir(toolchain_p2)
-
 if __name__ == '__main__':
 #    print('prebuild tool test ')
 
-    main(sys.argv[1], sys.argv[2], sys.argv[3])
+    main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
 
 #    print('prebuild tool test done')
 #    sys.exit(1)
